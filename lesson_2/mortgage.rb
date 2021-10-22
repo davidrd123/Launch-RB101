@@ -13,7 +13,7 @@ loan_amount = nil
 loop do
   puts "What is the loan amount?"
   loan_amount = gets.chomp
-  
+
   if valid_number?(loan_amount)
     break
   else
@@ -51,7 +51,6 @@ end
 loan_amount   = loan_amount.to_f
 loan_duration = loan_duration.to_f
 monthly_rate  = (apr.to_f / 100) / 12
-
 
 # Calculate monthly payment
 monthly_payment = loan_amount * monthly_rate
