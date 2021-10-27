@@ -4,9 +4,9 @@ vehicles = [
 ]
 
 def count_occurrences(vehicles)
-  vehicles.each_with_object(Hash.new(0)) do |vehicle, hash| 
-    hash[vehicle] += 1
-  end
+  counter = Hash.new(0)
+  vehicles.each { |vehicle| counter[vehicle] += 1 }
+  counter.each { |vehicle, count| puts "#{vehicle} => #{count}"}
 end
 
-p count_occurrences(vehicles)
+count_occurrences(vehicles)
