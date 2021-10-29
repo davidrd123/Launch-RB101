@@ -32,7 +32,7 @@ def crunch(string)
   prev_char = ''
   string.chars.each do |char|
     next if char == prev_char && char != ' '
-    
+
     result << char
     prev_char = char
   end
