@@ -18,12 +18,16 @@
 #   OR
 #   subseqs.flatten.sum
 
-def sum_of_sums(arr)
+def sum_of_sums1(arr)
   subseqs = []
-  (0..arr.length-1).each do |idx|
+  (0..arr.length - 1).each do |idx|
     subseqs << arr[0..idx]
   end
   subseqs.flatten.sum
+end
+
+def sum_of_sums(arr)
+  arr.map.with_index { |_, idx| arr[0..idx] }.flatten.sum
 end
 
 
