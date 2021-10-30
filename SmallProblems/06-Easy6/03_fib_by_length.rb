@@ -54,19 +54,16 @@ def find_fibonacci_index_by_length1(digits)
 end
 
 def find_fibonacci_index_by_length(digits)
-  fib2 = 1
-  fib1 = 1
-  fib = fib1 + fib2
+  prev_fib = [1, 1]
   curr_index = 3
   loop do
-    fib = fib1 + fib2
+    fib = prev_fib.sum
     break if fib.to_s.length >= digits
 
-    fib2 = fib1
-    fib1 = fib
+    prev_fib[0] = prev_fib[1]
+    prev_fib[1] = fib
     curr_index += 1
   end
-  # binding.pry
   curr_index
 end
 
